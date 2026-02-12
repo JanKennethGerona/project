@@ -1,286 +1,160 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-body {
-  font-family: "Lato", sans-serif;
-  background: url('https://cdnb.artstation.com/p/assets/images/images/025/669/259/original/hatim-benhsain-city.gif?1586542774');
-  background-size: cover;
-}
-
-.sidepanel  {
-  width: 1000;
-  position: fixed;
-  z-index: 1;
-  height: 889px;
-  top: 0;
-  left: 0;
-  background-color: #fdf5e6;
-  overflow-x: hidden;
-  transition: 1s;
-  padding-top: 60px;
-  border: solid 3px;
-}
-
-h1 {
-            color: #333;
-            font-family: 'Times New Roman', Times, serif;
-            
-        }
-h2 {
-            color: #333;
-            font-family: 'Times New Roman', Times, serif;
-            margin-top: 370px;
-        }
-        
-.sidepanel a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 35px;
-  color: #818181;
-  display: block;
-  transition: 0.3s;
-}
-
-.sidepanel a:hover {
-  color: #fdf5e6;
-}
-
-.text{
-	color: black;
-    font-family: 'Times New Roman', Times, serif;
-    font-size:20px;
-    
-    }
-.buttonnikenet{
-margin-top: 10px;
-margin-left: 100px;
-background-color: #5C4033;
-color: white;
-}
-.sidepanel .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-}
-
-.openbtn {
-  font-size: 20px;
-  cursor: pointer;
-  background-color: #111;
-  color: white;
-  padding: 10px 15px;
-  border: none;
-}
-
-.openbtn:hover {
-  background-color:#fdf5e6;
-  color: black;
-  transition: 0.3s;
-}
-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-
-        th, td {
-            border: 1px solid #dddddd;
-            text-align: left;
-            padding: 8px;
-            background-color: #fdf5e6;
-        }
-
-        th {
-            background-color: #f2f2f2;
-        }
-
-        .back-button {
-            position: fixed;
-            top: 40px;
-            right: 50px;
-            background-color: #111;
-            color: white;
-            padding: 10px;
-            border: none;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 2.5%;
-        }
-
-        .modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.5);
-  font-color: white;
-}
-
-.modal-content {
-  background-color: white;
-  margin: 15% auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 10%;
-  font-color: white;
-}
-
-button {
-  margin: 5px;
-}
-
-</style>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="Payroll.css">
 </head>
+
 <body>
 
-<div id="mySidepanel" class="sidepanel">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">X</a>
-  <h1>Add Employee</h1>
-        <label class="text" for="employeeName">Employee Name:</label>
-        <input type="text" id="employeeName"><br>
+  <div id="mySidepanel" class="sidepanel">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">X</a>
 
-        <label class="text" for="daysWorked">Days Worked:</label>
-        <input type="number" id="daysWorked"><br>
+    <div style="justify-content: center; align-items: center; display: flex; flex-direction: column; margin-bottom: 4em;">
+      <h1>Add Employee</h1>
+      <label class="text" for="employeeName">Employee Name:</label>
+      <input type="text" id="employeeName"><br>
 
-        <label class="text" for="dailyRate">Daily Rate:</label>
-        <input type="number" id="dailyRate"><br>
+      <label class="text" for="daysWorked">Days Worked:</label>
+      <input type="number" id="daysWorked"><br>
 
-        <label class="text" for="deductionAmount">Deduction Amount:</label>
-        <input type="number" id="deductionAmount"><br>
+      <label class="text" for="dailyRate">Daily Rate:</label>
+      <input type="number" id="dailyRate"><br>
 
-        <button class="buttonnikenet" onclick="addEmployee()">Add Employee</button>
+      <label class="text" for="deductionAmount">Deduction Amount:</label>
+      <input type="number" id="deductionAmount"><br>
 
-        <h2>DeleteEmployee</h2>
-        <label for="deleteLineNumber">Employee Number to Delete:</label>
-        <input type="number" id="deleteLineNumber"><br>
+      <button class="buttonnikenet" onclick="addEmployee()">Add Employee</button>
+    </div>
+    <div style="justify-content: center; align-items: center; display: flex; flex-direction: column;">
+      <h1>DeleteEmployee</h1>
+      <label for="deleteLineNumber">Employee Number:</label>
+      <input type="number" id="deleteLineNumber"><br>
 
-        <button class="buttonnikenet" onclick="confirmDeleteEmployee()">Delete Employee</button>
-</div>
-
-<button class="openbtn" onclick="openNav()">Add Employee</button>  
-<button class="back-button" onclick="window.location.href='index.html'")">&#8249;</button>
-
-<div id="payrollTable">
-        <h1>Payroll List</h1>
-        <table id="payrollListTable">
-            <thead>
-                <tr>
-                    <th>No.</th>
-                    <th>Employee Name</th>
-                    <th>Days Worked</th>
-                    <th>Daily Rate</th>
-                    <th>Gross Pay</th>
-                    <th>Deduction Amount</th>
-                    <th>Net Pay</th>
-                </tr>
-            </thead>
-            <tbody>
-                
-            </tbody>
-        </table>
+      <button class="buttonnikenet" onclick="confirmDeleteEmployee()">Delete Employee</button>
     </div>
 
-    <div id="deleteConfirmationModal" class="modal">
-  <div class="modal-content">
-    <p>Are you sure you want to delete this employee?</p>
-    <button class="buttonnikenet" onclick="deleteEmployee()">Yes</button>
-    <button onclick="closeDeleteConfirmationModal()">No</button>
   </div>
-</div>
-<script>
 
-function openNav() {
-  document.getElementById("mySidepanel").style.width = "250px";
-}
+  <div style="display: flex; justify-content: space-between;">
+    <button class="back-button" onclick="window.location.href='index.html'">&#8249;</button>
+    <button class="openbtn" onclick="openNav()">Add Employee</button>
+  </div>
 
-function closeNav() {
-  document.getElementById("mySidepanel").style.width = "0";
-}
+  <div id="payrollTable" style="display: flex; flex-direction: column; align-items: center;">
+    <h1>Payroll List</h1>
+    <table id="payrollListTable">
+      <thead>
+        <tr>
+          <th>No.</th>
+          <th>Employee Name</th>
+          <th>Days Worked</th>
+          <th>Daily Rate</th>
+          <th>Gross Pay</th>
+          <th>Deduction Amount</th>
+          <th>Net Pay</th>
+        </tr>
+      </thead>
+      <tbody>
 
-let payrollList = [];
+      </tbody>
+    </table>
+  </div>
 
-        function addEmployee() {
-            const name = document.getElementById("employeeName").value;
-            const daysWorked = parseInt(document.getElementById("daysWorked").value);
-            const dailyRate = parseInt(document.getElementById("dailyRate").value);
-            const deductionAmount = parseInt(document.getElementById("deductionAmount").value);
+  <div id="deleteConfirmationModal" class="modal">
+    <div class="modal-content">
+      <p>Are you sure you want to delete this employee?</p>
+      <button class="buttonnikenet" onclick="deleteEmployee()">Yes</button>
+      <button onclick="closeDeleteConfirmationModal()">No</button>
+    </div>
+  </div>
+  <script>
 
-            const grossPay = daysWorked * dailyRate;
-            const netPay = grossPay - deductionAmount;
+    function openNav() {
+      document.getElementById("mySidepanel").style.width = "250px";
+      document.getElementById("mySidepanel").style.padding = "60px 30px";
+    }
 
-            payrollList.push({
-                name,
-                daysWorked,
-                dailyRate,
-                grossPay,
-                deductionAmount,
-                netPay
-            });
+    function closeNav() {
+      document.getElementById("mySidepanel").style.width = "0";
+      document.getElementById("mySidepanel").style.padding = "0";
+    }
 
-            displayPayrollList();
-        }
+    let payrollList = [];
 
-        function confirmDeleteEmployee() {
- 
-  const modal = document.getElementById("deleteConfirmationModal");
-  modal.style.display = "block";
-}
+    function addEmployee() {
+      const name = document.getElementById("employeeName").value;
+      const daysWorked = parseInt(document.getElementById("daysWorked").value);
+      const dailyRate = parseInt(document.getElementById("dailyRate").value);
+      const deductionAmount = parseInt(document.getElementById("deductionAmount").value);
 
-function deleteEmployee() {
- 
-  closeDeleteConfirmationModal();
+      const grossPay = daysWorked * dailyRate;
+      const netPay = grossPay - deductionAmount;
 
-  const lineNumber = parseInt(document.getElementById("deleteLineNumber").value);
+      payrollList.push({
+        name,
+        daysWorked,
+        dailyRate,
+        grossPay,
+        deductionAmount,
+        netPay
+      });
 
-  if (lineNumber >= 1 && lineNumber <= payrollList.length) {
-    payrollList.splice(lineNumber - 1, 1);
-    displayPayrollList();
-  } else {
-    alert("Invalid line number. Please try again.");
-  }
-}
+      displayPayrollList();
+    }
 
-function closeDeleteConfirmationModal() {
-  
-  const modal = document.getElementById("deleteConfirmationModal");
-  modal.style.display = "none";
-}
+    function confirmDeleteEmployee() {
 
-        function displayPayrollList() {
-            const tableBody = document.getElementById("payrollListTable").getElementsByTagName('tbody')[0];
-            tableBody.innerHTML = '';
+      const modal = document.getElementById("deleteConfirmationModal");
+      modal.style.display = "block";
+    }
 
-            payrollList.forEach((employee, index) => {
-                const row = tableBody.insertRow();
-                const cellNumber = row.insertCell(0);
-                const cellName = row.insertCell(1);
-                const cellDaysWorked = row.insertCell(2);
-                const cellDailyRate = row.insertCell(3);
-                const cellGrossPay = row.insertCell(4);
-                const cellDeductionAmount = row.insertCell(5);
-                const cellNetPay = row.insertCell(6);
+    function deleteEmployee() {
 
-                cellNumber.textContent = index + 1;
-                cellName.textContent = employee.name;
-                cellDaysWorked.textContent = employee.daysWorked;
-                cellDailyRate.textContent = employee.dailyRate;
-                cellGrossPay.textContent = employee.grossPay;
-                cellDeductionAmount.textContent = employee.deductionAmount;
-                cellNetPay.textContent = employee.netPay;
-            });
-        }
-</script>
-   
+      closeDeleteConfirmationModal();
+
+      const lineNumber = parseInt(document.getElementById("deleteLineNumber").value);
+
+      if (lineNumber >= 1 && lineNumber <= payrollList.length) {
+        payrollList.splice(lineNumber - 1, 1);
+        displayPayrollList();
+      } else {
+        alert("Invalid line number. Please try again.");
+      }
+    }
+
+    function closeDeleteConfirmationModal() {
+
+      const modal = document.getElementById("deleteConfirmationModal");
+      modal.style.display = "none";
+    }
+
+    function displayPayrollList() {
+      const tableBody = document.getElementById("payrollListTable").getElementsByTagName('tbody')[0];
+      tableBody.innerHTML = '';
+
+      payrollList.forEach((employee, index) => {
+        const row = tableBody.insertRow();
+        const cellNumber = row.insertCell(0);
+        const cellName = row.insertCell(1);
+        const cellDaysWorked = row.insertCell(2);
+        const cellDailyRate = row.insertCell(3);
+        const cellGrossPay = row.insertCell(4);
+        const cellDeductionAmount = row.insertCell(5);
+        const cellNetPay = row.insertCell(6);
+
+        cellNumber.textContent = index + 1;
+        cellName.textContent = employee.name;
+        cellDaysWorked.textContent = employee.daysWorked;
+        cellDailyRate.textContent = employee.dailyRate;
+        cellGrossPay.textContent = employee.grossPay;
+        cellDeductionAmount.textContent = employee.deductionAmount;
+        cellNetPay.textContent = employee.netPay;
+      });
+    }
+  </script>
+
 </body>
-</html> 
+
+</html>

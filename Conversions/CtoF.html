@@ -1,106 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" type="x-icon" href="https://scontent.fceb1-2.fna.fbcdn.net/v/t1.15752-9/400164724_324827416922877_1703190077317486316_n.png?_nc_cat=109&ccb=1-7&_nc_sid=8cd0a2&_nc_eui2=AeE4o2zjVCvugiVO06QpdViuNpVlw2RRT502lWXDZFFPnQwleJujLxRHxacKpj4aZ6QyUqLLSJt8M7IYFQiHz1VR&_nc_ohc=S88OnZYw8U4AX_2080W&_nc_ht=scontent.fceb1-2.fna&oh=03_AdQYRGnJz0KBEMsGJAW-LHQ9Sg78c8fs3kVQQJYDGZDm_w&oe=6581A9B7">
+    <link rel="shortcut icon" type="x-icon"
+        href="https://scontent.fceb1-2.fna.fbcdn.net/v/t1.15752-9/400164724_324827416922877_1703190077317486316_n.png?_nc_cat=109&ccb=1-7&_nc_sid=8cd0a2&_nc_eui2=AeE4o2zjVCvugiVO06QpdViuNpVlw2RRT502lWXDZFFPnQwleJujLxRHxacKpj4aZ6QyUqLLSJt8M7IYFQiHz1VR&_nc_ohc=S88OnZYw8U4AX_2080W&_nc_ht=scontent.fceb1-2.fna&oh=03_AdQYRGnJz0KBEMsGJAW-LHQ9Sg78c8fs3kVQQJYDGZDm_w&oe=6581A9B7">
     <title>Celsius to Fahrenheit Converter</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            background: url('https://w0.peakpx.com/wallpaper/816/812/HD-wallpaper-black-chalkboard-mathematics-formula-chalkboard-math.jpg') center center fixed;
-            background-size: cover;
-        }
-
-        #converter {
-            max-width: 400px;
-            margin: 0 auto;
-            background: url('https://w0.peakpx.com/wallpaper/338/1021/HD-wallpaper-white-crumpled-paper-texture-white-paper-background-paper-texture-paper.jpg') center center fixed;
-           
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-         h2 {
-            color: #333;
-            font-family: 'Times New Roman', Times, serif;
-        }
-
-        input {
-            width: 100%;
-            padding: 10px;
-            margin: 8px 0;
-            box-sizing: border-box;
-        }
-
-        button {
-            background-color: #232526;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #FFCC99;
-        }
-
-        .back-button {
-            position: fixed;
-            top: 330px;
-            left: 600px;
-            background-color: white;
-            color: black;
-            padding: 10px;
-            border: none;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 2.5%;
-        }
-
-        #result {
-            margin-top: 15px;
-            font-size: 18px;
-            font-weight: bold;
-            color: red;
-        }
-    </style>
+    <link rel="stylesheet" href="Conversions.css">
 </head>
+
 <body>
 
-<div id="converter">
-    <h2>Celsius to Fahrenheit</h2>
-    <form id="conversionForm">
-        <label for="celsius">Celsius Temperature:</label>
-        <input type="number" id="celsius" name="celsius" required>
+    <div id="converter">
+        <h2>Celsius to Fahrenheit</h2>
+        <form id="conversionForm">
+            <label for="celsius">Celsius Temperature:</label>
+            <input type="number" id="celsius" name="celsius" required>
+            <button type="button" onclick="convertToCelsius()">Convert to Fahrenheit</button>
+        </form>
+        <button class="back-button" onclick="window.location.href='../ConversionPage.html'">&#8249;</button>
+        <div id="result"></div>
+    </div>
 
-        <button type="button" onclick="convertToCelsius()">Convert to Fahrenheit</button>
-    </form>
-    <button class="back-button" onclick="window.location.href='../ConversionPage.html'")">&#8249;</button>
+    <script>
+        function convertToCelsius() {
+            var celsius = parseFloat(document.getElementById("celsius").value);
+            var fahrenheit = (celsius * 9 / 5) + 32;
 
-    <div id="result"></div>
-</div>
-
-<script>
-    function convertToCelsius() {
-        var celsius = parseFloat(document.getElementById("celsius").value);
-
-        var fahrenheit = (celsius * 9/5) + 32;
-
-        document.getElementById("result").innerHTML = "" + fahrenheit.toFixed(2) + " °F";
-    }
-</script>
-
+            if (isNaN(celsius)) {
+                document.getElementById("result").innerHTML = "Please enter a valid number.";
+            } else {
+                document.getElementById("result").innerHTML = "" + fahrenheit.toFixed(2) + " °F";
+            }   
+        }
+    </script>
 </body>
 </html>

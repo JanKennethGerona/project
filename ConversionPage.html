@@ -1,79 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" type="x-icon" href="https://scontent.fceb1-2.fna.fbcdn.net/v/t1.15752-9/400164724_324827416922877_1703190077317486316_n.png?_nc_cat=109&ccb=1-7&_nc_sid=8cd0a2&_nc_eui2=AeE4o2zjVCvugiVO06QpdViuNpVlw2RRT502lWXDZFFPnQwleJujLxRHxacKpj4aZ6QyUqLLSJt8M7IYFQiHz1VR&_nc_ohc=S88OnZYw8U4AX_2080W&_nc_ht=scontent.fceb1-2.fna&oh=03_AdQYRGnJz0KBEMsGJAW-LHQ9Sg78c8fs3kVQQJYDGZDm_w&oe=6581A9B7">
+    <link rel="shortcut icon" type="x-icon"
+        href="https://scontent.fceb1-2.fna.fbcdn.net/v/t1.15752-9/400164724_324827416922877_1703190077317486316_n.png?_nc_cat=109&ccb=1-7&_nc_sid=8cd0a2&_nc_eui2=AeE4o2zjVCvugiVO06QpdViuNpVlw2RRT502lWXDZFFPnQwleJujLxRHxacKpj4aZ6QyUqLLSJt8M7IYFQiHz1VR&_nc_ohc=S88OnZYw8U4AX_2080W&_nc_ht=scontent.fceb1-2.fna&oh=03_AdQYRGnJz0KBEMsGJAW-LHQ9Sg78c8fs3kVQQJYDGZDm_w&oe=6581A9B7">
     <title>Conversions</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            background: url('https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/e4316a93890387.5e70ade47b737.gif') center center fixed;
-            background-size: cover;
-        }
-
-        #container {
-            max-width: 400px;
-            margin: 0 auto;
-            background-color: #f4f4f4;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            margin-top: 50px;
-        }
-
-        h2 {
-            color: #333;
-            font-family: 'Times New Roman', Times, serif;
-        }
-
-        button {
-            background-color: #232526;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin: 5px;
-        }
-        button:hover {
-            background-color: #FFCC99;
-        }
-        .back-button {
-            position: fixed;
-            top: 370px;
-            left: 600px;
-            background-color: white;
-            color: black;
-            padding: 10px;
-            border: none;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 2.5%;
-        }
-        
-    </style>
+    <link rel="stylesheet" href="ConversionPage.css">
 </head>
+
 <body>
 
-<div id="container">
-    <h2>Conversions</h2>
-    <button onclick="window.location.href='Conversions/CtoF.html'">Celcius to Fahrenheit</button>
-    <button onclick="window.location.href='Conversions/FtoC.html'">Fahrenheit to Celcius</button>
-    <button onclick="window.location.href='Conversions/MtoF.html'">Meters to Feet</button>
-    <button onclick="window.location.href='Conversions/FtoM.html'">Feet to Meters</button>
-    <button class="back-button" onclick="window.location.href='index.html'")">&#8249;</button>
-</div>
+    <div id="container">
+        <div id="container-top">
+            <button class="back-button" onclick="window.location.href='index.html'">
+                <</button>
+                <h2>Conversions</h2>
+        </div>
+        <button onclick="window.location.href='Conversions/CtoF.html'">Celcius to Fahrenheit</button>
+        <button onclick="window.location.href='Conversions/FtoC.html'">Fahrenheit to Celcius</button>
+        <button onclick="window.location.href='Conversions/MtoF.html'">Meters to Feet</button>
+        <button onclick="window.location.href='Conversions/FtoM.html'">Feet to Meters</button>
+    </div>
 
 </body>
+
 </html>

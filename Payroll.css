@@ -1,0 +1,142 @@
+body {
+    font-family: "Lato", sans-serif;
+    background: url('https://cdnb.artstation.com/p/assets/images/images/025/669/259/original/hatim-benhsain-city.gif?1586542774');
+    background-size: cover;
+    padding: 4em;
+}
+
+.sidepanel {
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    height: 100%;
+    top: 0;
+    right: 0;
+    background-color: #fdf5e6;
+    overflow-x: hidden;
+    transition: 1s;
+    padding: 0;
+    border: solid 3px;
+}
+
+h1 {
+    color: #333;
+    font-family: 'Times New Roman', Times, serif;
+
+}
+
+h2 {
+    color: #333;
+    font-family: 'Times New Roman', Times, serif;
+    margin-top: 370px;
+}
+
+.sidepanel a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 35px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidepanel a:hover {
+    color: #fdf5e6;
+}
+
+.text {
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+
+}
+
+.buttonnikenet {
+    background-color: #5C4033;
+    color: white;
+}
+
+.sidepanel .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+}
+
+.openbtn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #111;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+}
+
+.openbtn:hover {
+    background-color: #fdf5e6;
+    color: black;
+    transition: 0.3s;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+thead {
+    background-color: #f2f2f2;
+}
+
+th,
+td {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 8px;
+    background-color: #fdf5e6;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+.back-button {
+    background-color: #111;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
+.modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 10%;
+    color: white;
+}
+
+button {
+    margin: 5px;
+}

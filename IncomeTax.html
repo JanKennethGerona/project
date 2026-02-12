@@ -5,106 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="x-icon" href="https://scontent.fceb1-2.fna.fbcdn.net/v/t1.15752-9/400164724_324827416922877_1703190077317486316_n.png?_nc_cat=109&ccb=1-7&_nc_sid=8cd0a2&_nc_eui2=AeE4o2zjVCvugiVO06QpdViuNpVlw2RRT502lWXDZFFPnQwleJujLxRHxacKpj4aZ6QyUqLLSJt8M7IYFQiHz1VR&_nc_ohc=S88OnZYw8U4AX_2080W&_nc_ht=scontent.fceb1-2.fna&oh=03_AdQYRGnJz0KBEMsGJAW-LHQ9Sg78c8fs3kVQQJYDGZDm_w&oe=6581A9B7">
     <title>Income Tax Calculator</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            text-align: center;
-            background: url('https://i.pinimg.com/originals/b9/e7/36/b9e736760a92f5146de5eb236851d6f7.gif') center center fixed;
-            
-            margin: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-        }
-        #calculator {
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-            overflow: hidden;
-            max-width: 400px;
-            width: 100%;
-            color: #333;
-        }
-        #header {
-            background: url('https://i.pinimg.com/564x/59/6f/d8/596fd8cc28ba9f9a674ba30c5c02a541.jpg') center center fixed;
-            
-            color: #336633;
-            padding: 20px;
-        }
-        #content {
-            padding: 20px;
-        }
-        label {
-            display: block;
-            font-weight: bold;
-            margin-bottom: 8px;
-            text-align: left;
-            color: #555;
-        }
-        input {
-            width: calc(100% - 20px);
-            padding: 12px;
-            margin-bottom: 20px;
-            box-sizing: border-box;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-         h2 {
-            color: #333;
-            font-family: 'Times New Roman', Times, serif;
-        }
-        .back-button {
-            position: fixed;
-            top: 370px;
-            left: 600px;
-            background-color: #336633;
-            color: white;
-            padding: 10px;
-            border: none;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 2.5%;
-        }
-        
-        button {
-            background-color: #336600;
-            color: white;
-            padding: 15px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            width: 100%;
-            font-size: 16px;
-            transition: background-color 0.3s ease;
-        }
-        button:hover {
-            background-color: #232526;
-        }
-        #result {
-            margin-top: 20px;
-            font-size: 18px;
-            font-weight: bold;
-            color: #660066;
-        }
-    </style>
+    <link rel="stylesheet" href="IncomeTax.css">
 </head>
 <body>
 
 <div id="calculator">
     <div id="header">
        
-        <h2> <mark style="background-color:white; color:#336600">Income Tax</mark></h2>
+        <h2> <mark class="title">Income Tax</mark></h2>
     </div>
     <div id="content">
         <form id="incomeTaxForm">
             <label for="income">Taxable Income:</label>
             <input type="number" id="income" name="income" required>
-            <button class="back-button" onclick="window.location.href='index.html'")">&#8249;</button>
+            <button class="back-button" onclick="window.location.href='index.html'">&#8249;</button>
             <button type="button" onclick="calculateIncomeTax()">Calculate Income Tax</button>
         </form>
         
@@ -115,7 +29,7 @@
     function calculateIncomeTax() {
         var income = parseFloat(document.getElementById("income").value);
         var tax = 0;
-         if (income <= 250000) {
+        if (income <= 250000) {
             tax = 0;
         } else if (income <= 400000) {
             tax = (income - 250000) * 0.2;
@@ -128,8 +42,12 @@
         } else {
             tax = ((income - 8000000) * 0.35) + 2410000;
         }
+
+        if (isNaN(income)) {
+            document.getElementById("result").innerHTML = "Please enter a valid income.";
+        } else {
         document.getElementById("result").innerHTML = "Income Tax: Php " + tax.toFixed(2);
-    }
+    }}
 </script>
 </body>
 </html>

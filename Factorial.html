@@ -5,91 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" type="x-icon" href="https://scontent.fceb1-2.fna.fbcdn.net/v/t1.15752-9/400164724_324827416922877_1703190077317486316_n.png?_nc_cat=109&ccb=1-7&_nc_sid=8cd0a2&_nc_eui2=AeE4o2zjVCvugiVO06QpdViuNpVlw2RRT502lWXDZFFPnQwleJujLxRHxacKpj4aZ6QyUqLLSJt8M7IYFQiHz1VR&_nc_ohc=S88OnZYw8U4AX_2080W&_nc_ht=scontent.fceb1-2.fna&oh=03_AdQYRGnJz0KBEMsGJAW-LHQ9Sg78c8fs3kVQQJYDGZDm_w&oe=6581A9B7">
   <title>Factorial</title>
-  <style>
-    body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            background: url('https://scitechdaily.com/images/Mathematics-Formulas-Calculations.gif') center center fixed;
-            background-size: cover;
-        }
-
-    .container {
-      max-width: 400px;
-            margin: 0 auto;
-            background-color: #f4f4f4;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            margin-top: 50px;
-            background: url('https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjk5Ni0wMDlfMS1rcm9pcjRkay5qcGc.jpg')
-        }
-       
-
-    h1 {
-      text-align: center;
-      font-family: 'Times New Roman', Times, serif;
-    }
-
-    label {
-      display: block;
-      margin-bottom: 10px;
-    }
-
-    input {
-      width: 100%;
-      align-items: center;
-      margin-bottom: 10px;
-    }
-
-    button {
-      background-color: #0047AB;
-      color: white;
-      padding: 10px 15px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      width: 100%;
-    }
-
-    button:hover {
-      background-color: black;
-    }
-
-    #results {
-      margin-top: 20px;
-    }
-
-    p {
-      margin: 5px 0;
-    }
-     .back-button {
-            position: fixed;
-            top: 370px;
-            left: 600px;
-            background: url('https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjk5Ni0wMDlfMS1rcm9pcjRkay5qcGc.jpg');
-            color: #0047AB;
-            padding: 10px;
-            border: none;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 2.5%;
-        }
-  </style>
+  <link rel="stylesheet" href="Factorial.css">
 </head>
 <body>
 
   <div class="container">
+    <button class="back-button" onclick="window.location.href='index.html'">&#8249;</button>
     <h1>Factorial</h1>
-
     <label for="numberInput">Enter a number: </label>
     <input type="number" id="numberInput" min="0">
     <button onclick="calculate()">Calculate</button>
@@ -100,7 +22,7 @@
       <p id="averageResult"></p>
     </div>
   </div>
-  <button class="back-button" onclick="window.location.href='index.html'")">&#8249;</button>
+  
 
   <script>
     function calculate() {
